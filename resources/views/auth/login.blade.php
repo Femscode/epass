@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Login Cover | VMS - Multipurpose Bootstrap Dashboard Template </title>
+    <title>Login | E-pass </title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
@@ -27,7 +27,7 @@
                 <div class="form-container">
                     <div class="form-content">
 
-                        <h1 class="">Log In to <a href="index-2.html"><span class="brand-name">VMS</span></a></h1>
+                        <h1 class="">Log In to <a href="index-2.html"><span class="brand-name">E-pass</span></a></h1>
                         <p class="signup-link">New Here? <a href="register">Create an account</a></p>
                         <form class="form w-100" method='post' action="{{route('login')}}">@csrf
                             <!--begin::Heading-->
@@ -98,15 +98,16 @@
                             <a href="forgot-password" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
                             <!--end::Actions-->
                         </form>                      
-                        <p class="terms-conditions">© <?php echo(Date('Y'));?> All Rights Reserved. <a href="/">VMS</a> is a product of <a href="javascript:void(0);">CareTech</a></p>
+                        <p class="terms-conditions">© <?php echo(Date('Y'));?> All Rights Reserved. <a href="/">E-pass</a> is a product of <a href="javascript:void(0);">CareTech</a></p>
 
                     </div>                    
                 </div>
             </div>
         </div>
         <div class="form-image">
-            <div class="l-image">
-            </div>
+            <img src='{{ asset("assets/img/e-pass.jpg")}}' alt='e-pass'/>
+            {{-- <div class="l-image">
+            </div> --}}
         </div>
     </div>
 

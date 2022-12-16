@@ -87,17 +87,25 @@ class DashboardController extends Controller
     }
     public function staffs() {
         $data['user'] = $user = Auth::user();
-        // dd($user);
-        
-        if($user->hasPermissionTo('create Staff')) {
-
-            $data['departments'] = Department::where('company_id',$user->company_id)->where('uuid',$user->department_id)->get();
-           
-            $data['staffs'] = User::where('company_id',$user->company_id)->where('department_id',$user->department_id)->get();
+        if($user->user_type == 'admin') {
+            $data['departments'] = Department::where('company_id',$user->company_id)->get();
+          
+            $data['staffs'] = User::where('company_id',$user->company_id)->get();
             return view('dashboard.staff',$data);
-        } else {
-            return redirect()->back();
         }
+        else {
+            if($user->hasPermissionTo('create Staff')) {
+
+                $data['departments'] = Department::where('company_id',$user->company_id)->where('uuid',$user->department_id)->get();
+               
+                $data['staffs'] = User::where('company_id',$user->company_id)->where('department_id',$user->department_id)->get();
+                return view('dashboard.staff',$data);
+            } else {
+                return redirect()->back();
+            }
+        }
+        
+      
     }
     public function add_staff(Request $request) {
         $validator = $request->validate([

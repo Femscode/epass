@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-  <title>Register Cover | CORK - Multipurpose Bootstrap Dashboard Template </title>
+  <title>E-pass | Registration </title>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <!-- BEGIN GLOBAL MANDATORY STYLES -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
@@ -139,7 +139,7 @@
                       class="bi-chevron-right small ms-1"></i></a></span>
               </div>
             </form>
-            <p class="terms-conditions">© <?php echo(Date('Y'));?> All Rights Reserved. <a href="/">VMS</a> is a product of <a href="javascript:void(0);">CareTech</a></p>
+            <p class="terms-conditions">© <?php echo(Date('Y'));?> All Rights Reserved. <a href="/">E-pass</a> is a product of <a href="javascript:void(0);">CareTech</a></p>
 
 
           </div>
@@ -147,8 +147,9 @@
       </div>
     </div>
     <div class="form-image">
-      <div class="l-image">
-      </div>
+      <img src='{{ asset("assets/img/e-pass.jpg")}}' alt='e-pass'/>
+      {{-- <div class="l-image">
+      </div> --}}
     </div>
   </div>
 

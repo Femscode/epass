@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Visitor Management System</title>
+  <title>Home | E-PASS</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico">
@@ -32,7 +32,7 @@
       <nav class="js-mega-menu navbar-nav-wrap">
         <!-- Default Logo -->
         <a class="navbar-brand" href="index-2.html" aria-label="Space">
-          <h2><strong>V<span style='color:#F1B980'>M</span>S</strong></h2>
+          <h2><strong>E-<span style='color:#F1B980'>PASS</span></strong></h2>
           {{-- <img class="navbar-brand-logo" src="landing_assets/svg/logos/logo.svg" alt="Image Description"> --}}
         </a>
         <!-- End Default Logo -->
@@ -262,7 +262,7 @@
 
                 <div class="d-grid text-center">
                   <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
-                  <span class="form-text">Need help? <a class="link" href="page-help-center.html">Visit our Help Center
+                  <span class="form-text">Create a new <a class="link" href="/register">account
                       <i class="bi-chevron-right small ms-1"></i></a></span>
                 </div>
                 </form>
@@ -1129,7 +1129,7 @@
           <!-- Logo -->
           <div class="mb-5">
             <a class="navbar-brand" href="index-2.html" aria-label="Space">
-              <h2 class='text-white'><strong>V<span style='color:#F1B980'>M</span>S</strong></h2>
+              <h2 class='text-white'><strong>E-<span style='color:#F1B980'>PASS</span></strong></h2>
               {{-- <img class="navbar-brand-logo" src="landing_assets/svg/logos/logo-white.svg" alt="Image Description"> --}}
             </a>
           </div>
@@ -1272,7 +1272,7 @@
 
       <div class="row align-items-md-end py-5">
         <div class="col-md mb-3 mb-md-0">
-          <p class="text-white mb-0">Developed by CareTech. All rights reserved.</p>
+          <p class="text-white mb-0">Developed by <a style='color:red' href='https://caretech.netlify.com'>CareTech</a>. All rights reserved.</p>
         </div>
 
         <div class="col-md d-md-flex justify-content-md-end">
