@@ -186,6 +186,15 @@ class DashboardController extends Controller
         $data['permissions'] = Permission::all();
         return view('dashboard.permission',$data);
     }
+    public function billing() {
+       
+        $data['roles'] = Role::all();
+        $data['user'] = Auth::user();
+        $data['departments'] = Department::all();
+        $data['staffs'] = User::all();
+        $data['permissions'] = Permission::all();
+        return view('dashboard.billing',$data);
+    }
     public function role($uuid) {
         $data['roles'] = Role::all();
         $data['user'] = User::where('uuid',$uuid)->firstOrFail();

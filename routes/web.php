@@ -56,6 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('approve_visitor', [App\Http\Controllers\SecurityController::class, 'approve_visitor'])->name('approve_visitor');
     Route::get('departments', [App\Http\Controllers\DashboardController::class, 'departments'])->name('departments');
     Route::get('staffs', [App\Http\Controllers\DashboardController::class, 'staffs'])->name('staffs');
+    Route::get('billing', [App\Http\Controllers\DashboardController::class, 'billing'])->name('billing');
     Route::get('permissions', [App\Http\Controllers\DashboardController::class, 'permissions'])->name('permissions');
     Route::post('set_permission', [App\Http\Controllers\DashboardController::class, 'set_permission'])->name('set_permission');
     Route::get('role/{uuid}', [App\Http\Controllers\DashboardController::class, 'role'])->name('role');
