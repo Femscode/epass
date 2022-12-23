@@ -30,7 +30,7 @@
                             @if($user->image == null)
                             <img src="assets/img/profile-3.jpg" alt="avatar">
                             @else
-                            <img src="{{ asset('visitor_images/'.$user->image)}}" style='height:50px;height:100px' alt="avatar">
+                            <img src="{{ asset('public/visitor_images/'.$user->image)}}" style='height:50px;height:100px' alt="avatar">
                             @endif
                             <p class="">{{ $user->name }}</p>
                         </div>
