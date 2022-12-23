@@ -35,7 +35,7 @@
                                 </div>
                                 <div id='imgdiv' style='display:none'>
                                 @if($checkin->image !== null)
-                                <img src="{{ asset('public/visitor_images/'.$checkin->image)}}" alt="avatar">
+                                <img src="{{ asset('epass_files/public/visitor_images/'.$checkin->image)}}" alt="avatar">
 
                                 @else
                                 <img src="{{ asset('assets/img/profile-3.jpg')}}"  alt="avatar">
