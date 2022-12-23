@@ -27,7 +27,11 @@
                                 </svg></a>
                         </div>
                         <div class="text-center user-info">
+                            @if($user->image == null)
                             <img src="assets/img/profile-3.jpg" alt="avatar">
+                            @else
+                            <img src="{{ asset('visitor_images/'.$user->image)}}" style='height:50px;height:100px' alt="avatar">
+                            @endif
                             <p class="">{{ $user->name }}</p>
                         </div>
                         <div class="user-info-list">
@@ -266,22 +270,7 @@
                                 </div>
                             </div>
 
-                            <div class="card col-md-4 m-2"
-                                style='background:#cce5ff;color:#004085;border-left-color:#004085;border-left-width:5px'>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="numbers">
-                                                <i class="fas fa-lightbulb  scroll-icon p-2"></i>
-                                                <a href='/staffs' class="mb-0" style='color:#004085'>
-                                                    Roles & Permission
-
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                      
 
 
                             <div class="card col-md-4 m-2"
@@ -291,7 +280,7 @@
                                         <div class="col-12">
                                             <div class="numbers">
                                                 <i class="fas fa-desktop scroll-icon p-2"></i>
-                                                <a href='/cable' class="mb-0" style='color:#383d41'>
+                                                <a href='/profile' class="mb-0" style='color:#383d41'>
                                                     Profile
 
                                                 </a>
@@ -300,6 +289,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card col-md-4 m-2"
+                            style='background:#fff3cd;color:#856404;border-left-color:#856404;border-left-width:5px'>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="numbers">
+                                            <i class="fas fa-life-ring scroll-icon p-2"></i>
+                                            <a href='/billing' class="mb-0" style='color:#856404'>
+                                                Billings & Subscription
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                             <div class="card col-md-4 m-2"
                                 style='background:#f8d7da;color:#721c24;border-left-color:#721c24;border-left-width:5px'>
@@ -308,8 +313,8 @@
                                         <div class="col-12">
                                             <div class="numbers">
                                                 <i class="fas fa-comments scroll-icon p-2"></i>
-                                                <a href='/sms' class="mb-0" style='color:#721c24'>
-                                                    CheckIns
+                                                <a href='/staff_checkin' class="mb-0" style='color:#721c24'>
+                                                    Pre-register Visitor
 
                                                 </a>
                                             </div>
@@ -317,23 +322,24 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card col-md-4 m-2"
-                                style='background:#fff3cd;color:#856404;border-left-color:#856404;border-left-width:5px'>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="numbers">
-                                                <i class="fas fa-life-ring scroll-icon p-2"></i>
-                                                <a href='billing' class="mb-0" style='color:#856404'>
-                                                    Billings & Subscription
-
-                                                </a>
-                                            </div>
+                            style='background:#cce5ff;color:#004085;border-left-color:#004085;border-left-width:5px'>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="numbers">
+                                            <i class="fas fa-lightbulb  scroll-icon p-2"></i>
+                                            <a href='/visitor_checkin' class="mb-0" style='color:#004085'>
+                                                
+                                                External Visits
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                          
                         </div>
 
                     </div>
@@ -436,4 +442,11 @@
 
 @endsection
 @section('script')
+<script>
+    $(document).ready(function() {
+        @if (session('message'))
+            Swal.fire('Success!',"{{ session('message') }}",'info');
+        @endif
+    })
+    </script>
 @endsection

@@ -17,14 +17,13 @@
         <div class="row layout-spacing">
 
             <!-- Content -->
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 layout-top-spacing mb-8">
+            {{-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 layout-top-spacing mb-8">
 
                 <div class="user-profile layout-spacing">
                     <div class="widget-content widget-content-area">
                         <div class="d-flex justify-content-between">
                             <h3 class="">Department</h3>
-                            <a href="user_account_setting.html" class="mt-2 edit-profile"></a>
-                        </div>
+                         </div>
                         <div class="m-2 p-2 text-center user-info">
                             <select class='form-control' id='select_department'>
                                 <option value=''>--Select Department--</option>
@@ -38,9 +37,9 @@
                 </div>
 
 
-            </div>
+            </div> --}}
 
-            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 layout-top-spacing">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 layout-top-spacing">
                 <div class="user-profile layout-spacing">
                     <div class="widget-content widget-content-area">
                         <div class="d-flex justify-content-between">

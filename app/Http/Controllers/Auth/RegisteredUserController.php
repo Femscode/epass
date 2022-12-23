@@ -81,6 +81,9 @@ class RegisteredUserController extends Controller
         $meta['uuid'] = Str::uuid();
         $meta['company_id'] = $user->uuid;
         $meta['name'] = 'Security Department';
+        $admin_meta['uuid'] = $user->uuid;
+        $admin_meta['company_id'] = $user->uuid;
+        $admin_meta['name'] = 'Administrator Department';
         $all_permissions = Permission::all()->pluck('name');
     
         foreach($all_permissions as $r_perm) {
@@ -88,6 +91,9 @@ class RegisteredUserController extends Controller
           
         }
         Department::create($meta);
+        $dpt = Department::create($admin_meta);
+        $user->department_id  = $dpt->uuid;
+        $user->save();
         Auth::login($user);
         return redirect(RouteServiceProvider::HOME);
     }

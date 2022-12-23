@@ -44,11 +44,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('staff_dashboard', [App\Http\Controllers\StaffController::class, 'index'])->name('staff_dashboard');
     Route::get('pending_visit', [App\Http\Controllers\StaffController::class, 'pending_visit'])->name('pending_visit');
+    Route::get('admin_pending_visit', [App\Http\Controllers\StaffController::class, 'admin_pending_visit'])->name('admin_pending_visit');
     Route::get('profile', [App\Http\Controllers\StaffController::class, 'profile'])->name('profile');
     Route::any('update_profile', [App\Http\Controllers\StaffController::class, 'update_profile'])->name('update_profile');
-    Route::get('approved_visit', [App\Http\Controllers\StaffController::class, 'approved_visit'])->name('approved_visit');
+    Route::get('admin_approved_visit', [App\Http\Controllers\StaffController::class, 'admin_approved_visit'])->name('admin_approved_visit');
     Route::get('records', [App\Http\Controllers\StaffController::class, 'in_records'])->name('records');
+    Route::get('admin_records', [App\Http\Controllers\StaffController::class, 'admin_in_records'])->name('admin_records');
     Route::get('out_records', [App\Http\Controllers\StaffController::class, 'out_records'])->name('out_records');
+    Route::get('admin_out_records', [App\Http\Controllers\StaffController::class, 'admin_out_records'])->name('admin_out_records');
     Route::get('staff_checkin', [App\Http\Controllers\StaffController::class, 'staff_checkin'])->name('staff_checkin');
     Route::get('visitor_checkin', [App\Http\Controllers\StaffController::class, 'visitor_checkin'])->name('visitor_checkin');
     Route::get('security_dashboard', [App\Http\Controllers\SecurityController::class, 'index'])->name('security_dashboard');

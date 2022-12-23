@@ -19,17 +19,24 @@ class StaffController extends Controller
     }
     public function pending_visit() {
         $data['user'] = $user = Auth::user();
-        
-        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->where('status','approved')->orWhere('status','unapproved')->latest()->paginate(3);
+      
+        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->where('status','unapproved')->latest()->paginate(3);
         return view('staff.pending_visit',$data);
+    }
+    public function admin_pending_visit() {
+        $data['user'] = $user = Auth::user();
+      
+        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->where('status','unapproved')->latest()->paginate(3);
+        return view('dashboard.pending_visit',$data);
     }
     public function profile() {
         $data['user'] = $user = Auth::user();
         
-        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->where('status','approved')->orWhere('status','unapproved')->latest()->paginate(3);
+        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->latest()->paginate(3);
         return view('staff.profile',$data);
     }
     public function update_profile(Request $request) {
+      
         $this->validate($request, [
             'name' => 'required',
             // 'gender' => 'required',
@@ -50,7 +57,7 @@ class StaffController extends Controller
         $user->address = $request->address;
         $user->save();
         return redirect()->route('dashboard')->with('message','Profile Updated Successfully');
-        dd($request->all());
+      
     }
     public function approved_visit() {
         $data['user'] = $user = Auth::user();
@@ -58,15 +65,31 @@ class StaffController extends Controller
         $data['approved'] =  CheckIn::where('staff_id',$user->uuid)->where('status','staff_approved')->paginate(3);
         return view('staff.approved_visit',$data);
     }
+    public function admin_approved_visit() {
+        $data['user'] = $user = Auth::user();
+        
+        $data['approved'] =  CheckIn::where('staff_id',$user->uuid)->where('status','staff_approved')->paginate(3);
+        return view('dashboard.approved_visit',$data);
+    }
     public function in_records() {
         $data['user'] = $user = Auth::user();
         $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->get();
         return view('staff.records',$data);
     }
+    public function admin_in_records() {
+        $data['user'] = $user = Auth::user();
+        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->get();
+        return view('dashboard.records',$data);
+    }
     public function out_records() {
         $data['user'] = $user = Auth::user();
-        $data['checkins'] = CheckIn::where('user_id',$user->uuid)->get();
+        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->get();
         return view('staff.records',$data);
+    }
+    public function admin_out_records() {
+        $data['user'] = $user = Auth::user();
+        $data['checkins'] = CheckIn::where('staff_id',$user->uuid)->get();
+        return view('dashboard.records',$data);
     }
     public function staff_checkin() {
         $data['user'] = $user = Auth::user();
